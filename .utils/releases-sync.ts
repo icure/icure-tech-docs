@@ -172,8 +172,6 @@ async function sync(): Promise<void> {
         await setModelsAndApis();
     }
 
-    return
-
     const commit = Deno.run({ cmd: ["git", "commit", "-am", "Updated from swagger, injected versions and code snippets"] });
     if ((await commit.status()).code) return
     commit.close()

@@ -82,9 +82,51 @@ In iCure medical data is stored inside contacts a contact groups a batch of meas
 {% tab title="Javascript" %}
 {% code title="Create a contact with services" %}
 ```javascript
-const fetchedPatient = await patientApi.getPatientWithUser(loggedUser, patient.id)
-console.log(JSON.stringify(fetchedPatient, null, ' '))
+const serviceToCreate = await contactApi.service().newInstance(
+    loggedUser,
+    new Service({
+        valueDate: 20211020,
+        status: 0,
+        label: 'Hepatitis B virus surface',
+        codes: [
+            new CodeStub({
+                id: 'http://loinc.org|16935-9|2',
+                context: 'code',
+                type: 'http://loinc.org',
+                code: '16935-9',
+                version: '2',
+                label: {
+                    en: 'Hepatitis B virus surface Ab [Units/volume] in Serum'
+                }
+            })
+        ],
+        content: {
+            en: new Content({
+                measureValue: new Measure({
+                    value: 99.0,
+                    unit: '[iU]/L',
+                    unitCodes: [new CodeStub({
+                        id: 'http://unitsofmeasure.org|[iU]/L',
+                        type: 'http://unitsofmeasure.org',
+                        code: '[iU]/L'
+                    })]
+                })
+            })
+        }
+    })
+)
+
+const contact = await contactApi.createContactWithUser(loggedUser,
+    await contactApi.newInstance(
+        loggedUser,
+        patient,
+        new Contact({
+            responsible: loggedUser.healthcarePartyId,
+            services: [serviceToCreate]
+        }))
+)
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
