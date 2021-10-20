@@ -75,5 +75,17 @@ console.log(JSON.stringify(fetchedPatient, null, ' '))
 {% endtab %}
 {% endtabs %}
 
+### Add medical data to patient
 
+In iCure medical data is stored inside contacts a contact groups a batch of measures/observations in one single transaction. 
 
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Create a contact with services" %}
+```javascript
+const fetchedPatient = await patientApi.getPatientWithUser(loggedUser, patient.id)
+console.log(JSON.stringify(fetchedPatient, null, ' '))
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
