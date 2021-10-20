@@ -2,7 +2,7 @@
 
 ## iCure Cloud
 
-create your very own iCure environment, please head to [https://console.icure.dev](https://console.icure.dev).
+To create your very own iCure environment, please head to [https://console.icure.dev](https://console.icure.dev).
 
 ## Local Server
 
