@@ -1,4 +1,4 @@
-#!/usr/local/bin/deno run --allow-read --allow-write --allow-net
+#!/usr/local/bin/deno run --allow-read --allow-write --allow-net --allow-run
 
 /**
  * Type of values that {@link traverseFileSystem} yields
