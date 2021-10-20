@@ -1,0 +1,73 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="user-select" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="ES6ConvertVarToLetConst" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="on-change" />
+            <item index="1" class="java.lang.String" itemvalue="if" />
+            <item index="2" class="java.lang.String" itemvalue="on-mousemove" />
+            <item index="3" class="java.lang.String" itemvalue="class$" />
+            <item index="4" class="java.lang.String" itemvalue="as" />
+            <item index="5" class="java.lang.String" itemvalue="items" />
+            <item index="6" class="java.lang.String" itemvalue="hidden$" />
+            <item index="7" class="java.lang.String" itemvalue="sort" />
+            <item index="8" class="java.lang.String" itemvalue="filter" />
+            <item index="9" class="java.lang.String" itemvalue="on-click" />
+            <item index="10" class="java.lang.String" itemvalue="on-scroll" />
+            <item index="11" class="java.lang.String" itemvalue="src$" />
+            <item index="12" class="java.lang.String" itemvalue="include" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="25">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="paper-input-container" />
+            <item index="7" class="java.lang.String" itemvalue="paper-dialog" />
+            <item index="8" class="java.lang.String" itemvalue="dom-module" />
+            <item index="9" class="java.lang.String" itemvalue="paper-button" />
+            <item index="10" class="java.lang.String" itemvalue="paper-input" />
+            <item index="11" class="java.lang.String" itemvalue="entity-selector" />
+            <item index="12" class="java.lang.String" itemvalue="tk-token-field" />
+            <item index="13" class="java.lang.String" itemvalue="ht-pat-admin-card" />
+            <item index="14" class="java.lang.String" itemvalue="ht-pat-detail-ctc-detail-panel" />
+            <item index="15" class="java.lang.String" itemvalue="paper-toast" />
+            <item index="16" class="java.lang.String" itemvalue="iron-icon" />
+            <item index="17" class="java.lang.String" itemvalue="paper-listbox" />
+            <item index="18" class="java.lang.String" itemvalue="paper-material" />
+            <item index="19" class="java.lang.String" itemvalue="paper-icon-button" />
+            <item index="20" class="java.lang.String" itemvalue="paper-item" />
+            <item index="21" class="java.lang.String" itemvalue="filter-panel" />
+            <item index="22" class="java.lang.String" itemvalue="collapse-button" />
+            <item index="23" class="java.lang.String" itemvalue="paper-tooltip" />
+            <item index="24" class="java.lang.String" itemvalue="paper-fab" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
