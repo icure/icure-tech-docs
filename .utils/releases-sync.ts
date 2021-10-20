@@ -39,15 +39,15 @@ export async function* traverseFileSystem(
 
 async function injectCodeSnippets() {
     //Code snippets
-    const exdirs = [...Deno.readDirSync('../../icure-examples')].filter(d => d.isDirectory);
+    const exdirs = [...Deno.readDirSync('../../icure-code-samples')].filter(d => d.isDirectory);
     const examples: { [key: string]: string } = {}
     await exdirs.reduce(async (p, d) => {
         await p
-        const path = `../../icure-examples/${d.name}`;
+        const path = `../../icure-code-samples/${d.name}`;
         console.log(path)
         const files = [...Deno.readDirSync(path)].filter(f => f.name.endsWith('.mjs'));
         await files.reduce(async (p, f) => {
-            let text = await Deno.readTextFile(`../../icure-examples/${d.name}/${f.name}`);
+            let text = await Deno.readTextFile(`../../icure-code-samples/${d.name}/${f.name}`);
             const ex = text.split('//tech-doc: ').slice(1)
             ex.forEach((x: string) => {
                 const parts = x.split('\n');
