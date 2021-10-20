@@ -1,21 +1,13 @@
 # Medtech Use Case
 
-This section describes all you need to do to create patients, observations/measures for that patient, and export those data in FHIR.
+.This section describes all you need to do to create patients, observations/measures for that patient, and export those data in FHIR.
 
-### Setting up your environment
+### Authenticating to iCure from your code
 
-Once you have an iCure account, you can dive into writing some code
+Once you have an iCure account, you can dive into writing some code. You will need the private key that has been created when you have accessed your database environment for the first time. In the following example, the private key is `MIIEvAIBAD...`
 
 {% tabs %}
 {% tab title="Javascript" %}
-
-{% endtab %}
-
-{% tab title="Java" %}
-
-{% endtab %}
-
-{% tab title="Python" %}
 {% code title="Prepare for patient creation" %}
 ```javascript
 import {
