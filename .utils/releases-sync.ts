@@ -97,7 +97,7 @@ async function injectCodeSnippets() {
 
 async function swaggerImport() {
     const p = Deno.run({
-        cmd: ["java", "-cp", "./swagger-codegen-generators.jar", "io.swagger.codegen.v3.cli.SwaggerCodegen", "generate", "-i", "https://kraken.icure.dev/v3/api-docs", "-l", "gitbook", "--additional-properties", "classPrefix=Icc", "skipPathPrefix=/rest/v1", "-o", "./swagger"],
+        cmd: ["java", "-cp", "./swagger-codegen-generators.jar", "io.swagger.codegen.v3.cli.SwaggerCodegen", "generate", "-i", "https://kraken.icure.dev/v3/api-docs/v2", "-l", "gitbook", "--additional-properties", "classPrefix=Icc", "skipPathPrefix=/rest/v1", "-o", "./swagger"],
     });
     const {code} = await p.status();
     p.close();
@@ -106,7 +106,7 @@ async function swaggerImport() {
 
 async function sync(): Promise<void> {
     async function setDownloadLinks() {
-        const path = "../introduction/what-is-icure/install-icure-backend-locally.md";
+        const path = "../icure-data-stack/what-is-icure/install-icure.md";
         const req = await fetch('https://maven.taktik.be/service/rest/v1/search/assets?sort=version&direction=desc&repository=releases&group=org.taktik.icure&name=icure-oss')
         const assets = await req.json()
         const latest = assets.items[0]

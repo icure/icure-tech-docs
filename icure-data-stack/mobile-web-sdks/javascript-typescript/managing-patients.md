@@ -36,7 +36,7 @@ const patient = await patientApi.createPatientWithUser(loggedUser,
         new Patient({
             firstName: 'Gustave',
             lastName: 'Eiffel',
-            dateOfBirth:19731012,
+            dateOfBirth:19731011,
             note: 'A very private information'
         }))
 )
@@ -103,3 +103,6 @@ const search4 = await patientApi.filterByWithUser(loggedUser, new FilterChainPat
 )
 ```
 {% endcode %}
+
+
+

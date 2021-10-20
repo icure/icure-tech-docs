@@ -31,30 +31,30 @@ import {crypto} from '@icure/api/node-compat.js'
 
 const host = 'https://kraken.icure.dev/rest/v1';
 const {
-    patientApi,
-    userApi,
-    healthcarePartyApi,
-    cryptoApi
+	patientApi,
+	userApi,
+	healthcarePartyApi,
+	cryptoApi
 } = Api(host, 'esmith', 'mypassword', crypto)
 
 const loggedUser = await userApi.getCurrentUser();
 const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
 
 await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
-    loggedUser.healthcarePartyId,
-    b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+	loggedUser.healthcarePartyId,
+	b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
 )
 
 const patient = await patientApi.createPatientWithUser(loggedUser,
-    await patientApi.newInstance(
-        loggedUser,
-        new Patient({
-            firstName: 'Gustave',
-            lastName: 'Eiffel',
-            profession: 'Architect & Engineer',
-            dateOfBirth: 19731012,
-            note: 'A very private information'
-        }))
+	await patientApi.newInstance(
+		loggedUser,
+		new Patient({
+			firstName: 'Gustave',
+			lastName: 'Eiffel',
+			profession: 'Architect & Engineer',
+			dateOfBirth: 19731012,
+			note: 'A very private information'
+		}))
 )
 const fetchedPatient = await patientApi.getPatientWithUser(loggedUser, patient.id)
 console.log(JSON.stringify(fetchedPatient, null, ' '))
@@ -70,3 +70,6 @@ $ node index.mjs
 ```
 
 ##
+
+
+
