@@ -50,6 +50,7 @@
     * [Setting up your environment](icure-data-stack/mobile-web-sdks/javascript-typescript/setting-up-your-environment.md)
     * [Logging in](icure-data-stack/mobile-web-sdks/javascript-typescript/logging-in.md)
     * [Managing patients](icure-data-stack/mobile-web-sdks/javascript-typescript/managing-patients.md)
+    * [Medtech Use Case](icure-data-stack/mobile-web-sdks/javascript-typescript/medtech-use-case.md)
   * [Java/Kotlin](icure-data-stack/mobile-web-sdks/java-kotlin.md)
   * [Swift/Objective C](icure-data-stack/mobile-web-sdks/swift-objective-c.md)
 * [REST API calls](icure-data-stack/rest-api-calls/README.md)
