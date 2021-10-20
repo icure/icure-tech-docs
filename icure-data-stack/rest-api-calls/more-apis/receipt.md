@@ -1,126 +1,227 @@
 # Receipt
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt" method="post" summary="Creates a receipt." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/receipt" %}
+{% api-method-summary %}
+Creates a receipt
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="body" name="body" type="Receipt" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Receipt" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt/{receiptIds}" method="delete" summary="Deletes a receipt." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="receiptIds" type="String" %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/receipt/delete/batch" %}
+{% api-method-summary %}
+Deletes receipts
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt/{receiptId}" method="get" summary="Gets a receipt." %}
-{% swagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% endswagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="path" name="receiptId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/receipt/{receiptId}" %}
+{% api-method-summary %}
+Gets a receipt
+{% endapi-method-summary %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt/{receiptId}/attachment/{attachmentId}" method="get" summary="Get an attachment." %}
-{% swagger-description %}
+{% api-method-description %}
 
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="receiptId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="receiptId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="path" name="attachmentId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="enckeys" type="String" %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/receipt/{receiptId}/attachment/{attachmentId}" %}
+{% api-method-summary %}
+Get an attachment
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt/byref/{ref}" method="get" summary="Gets a receipt." %}
-{% swagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="receiptId" type="String" required=true %}
 
-{% endswagger-description %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="attachmentId" type="String" required=true %}
 
-{% swagger-parameter in="path" name="ref" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="enckeys" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt" method="put" summary="Updates a receipt." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/receipt/byRef/{ref}" %}
+{% api-method-summary %}
+Gets a receipt
+{% endapi-method-summary %}
 
-{% swagger-parameter in="body" name="body" type="Receipt" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="ref" type="String" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/receipt/{receiptId}/attachment/{blobType}" method="put" summary="Creates a receipt's attachment." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="path" name="receiptId" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/receipt" %}
+{% api-method-summary %}
+Updates a receipt
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="blobType" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="enckeys" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Receipt" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="body" name="body" type="List" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/receipt/{receiptId}/attachment/{blobType}" %}
+{% api-method-summary %}
+Creates a receipt's attachment
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="receiptId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="blobType" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="enckeys" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Object" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+

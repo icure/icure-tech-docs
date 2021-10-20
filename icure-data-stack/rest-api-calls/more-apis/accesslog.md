@@ -1,154 +1,242 @@
 # AccessLog
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog" method="post" summary="Creates an access log." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/accesslog" %}
+{% api-method-summary %}
+Creates an access log
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="body" name="body" type="AccessLog" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="AccessLog" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog/{accessLogIds}" method="delete" summary="Deletes an access log." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="accessLogIds" type="String" %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/accesslog/delete/batch" %}
+{% api-method-summary %}
+Deletes an access log
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog/byHcPartySecretForeignKeys" method="get" summary="List access logs found By Healthcare Party and secret foreign keyelementIds.." %}
-{% swagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% endswagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="query" name="hcPartyId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/accesslog" %}
+{% api-method-summary %}
+Get Paginated List of Access logs
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog/byUser" method="get" summary="Get Paginated List of Access logs." %}
-{% swagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="fromEpoch" type="Long" required=false %}
 
-{% endswagger-description %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="toEpoch" type="Long" required=false %}
 
-{% swagger-parameter in="query" name="userId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="descending" type="Boolean" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/accesslog/byUser" %}
+{% api-method-summary %}
+Get Paginated List of Access logs by user after date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="userId" type="String" required=true %}
 A User ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="accessType" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="accessType" type="String" required=false %}
 The type of access (COMPUTER or USER)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDate" type="Long" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDate" type="Long" required=false %}
 The start search epoch
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 The start key for pagination
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 A patient document ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 Number of rows
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="descending" type="Boolean" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="descending" type="Boolean" required=false %}
 Descending order
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog/{accessLogId}" method="get" summary="Gets an access log." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/accesslog/{accessLogId}" %}
+{% api-method-summary %}
+Gets an access log
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="accessLogId" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="accessLogId" type="String" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog" method="get" summary="Lists access logs." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="fromEpoch" type="Long" %}
 
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/accesslog/byHcPartySecretForeignKeys" %}
+{% api-method-summary %}
+List access logs found By Healthcare Party and secret foreign keyelementIds.
+{% endapi-method-summary %}
 
-{% swagger-parameter in="query" name="toEpoch" type="Long" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="startKey" type="Long" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
 
-{% endswagger-parameter %}
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/accesslog" %}
+{% api-method-summary %}
+Modifies an access log
+{% endapi-method-summary %}
 
-{% swagger-parameter in="query" name="descending" type="Boolean" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="AccessLog" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/accesslog" method="put" summary="Modifies an access log." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="body" name="body" type="AccessLog" %}
 
-{% endswagger-parameter %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}

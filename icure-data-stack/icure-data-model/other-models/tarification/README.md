@@ -1,34 +1,34 @@
 # Tarification
 
+
 ## Properties
 
-| Property           | Type                                                                                                                                                              | Description                                                                                                               |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `id *`             | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `rev`              | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `deletionDate`     | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Long/README.md)         | hard delete (unix epoch in ms) timestamp of the object. Filled automatically when deletePatient is called. format: int64. |
-| `label`            | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)        |                                                                                                                           |
-| `context`          | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `type`             | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `code`             | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `version`          | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `author`           | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `regions *`        | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)       |                                                                                                                           |
-| `periodicity *`    | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Periodicity/README.md)  |                                                                                                                           |
-| `level`            | [Integer](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Integer/README.md)   | format: int32.                                                                                                            |
-| `links *`          | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)       |                                                                                                                           |
-| `qualifiedLinks *` | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/List/README.md)          |                                                                                                                           |
-| `flags *`          | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)       | Values:                                                                                                                   |
-| `searchTerms *`    | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/List/README.md)          |                                                                                                                           |
-| `data`             | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `appendices *`     | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)        |                                                                                                                           |
-| `disabled *`       | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Boolean/README.md)   |                                                                                                                           |
-| `valorisations *`  | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Valorisation/README.md) |                                                                                                                           |
-| `category *`       | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)        |                                                                                                                           |
-| `consultationCode` | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Boolean/README.md)   |                                                                                                                           |
-| `hasRelatedCode`   | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Boolean/README.md)   |                                                                                                                           |
-| `needsPrescriber`  | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/Boolean/README.md)   |                                                                                                                           |
-| `relatedCodes *`   | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)       |                                                                                                                           |
-| `nGroup`           | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
-| `letterValues *`   | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/LetterValue/README.md)  |                                                                                                                           |
-| `ngroup`           | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/other-models/tarification/String/README.md)     |                                                                                                                           |
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `id * ` | [String](String) |   |
+| `rev ` | [String](String) |   |
+| `deletionDate ` | [Long](Long) | hard delete (unix epoch in ms) timestamp of the object. Filled automatically when deletePatient is called. format: int64. |
+| `label ` | [Map](String) |   |
+| `context ` | [String](String) |   |
+| `type ` | [String](String) |   |
+| `code ` | [String](String) |   |
+| `version ` | [String](String) |   |
+| `author ` | [String](String) |   |
+| `regions * ` | [List](String) |   |
+| `periodicity * ` | [List](Periodicity) |   |
+| `level ` | [Integer](Integer) |  format: int32. |
+| `links * ` | [List](String) |   |
+| `qualifiedLinks * ` | [Map](List) |   |
+| `flags * ` | [List](String) |  Values:  |
+| `searchTerms * ` | [Map](List) |   |
+| `data ` | [String](String) |   |
+| `appendices * ` | [Map](String) |   |
+| `disabled * ` | [Boolean](Boolean) |   |
+| `valorisations * ` | [List](Valorisation) |   |
+| `category * ` | [Map](String) |   |
+| `consultationCode ` | [Boolean](Boolean) |   |
+| `hasRelatedCode ` | [Boolean](Boolean) |   |
+| `needsPrescriber ` | [Boolean](Boolean) |   |
+| `relatedCodes * ` | [List](String) |   |
+| `ngroup ` | [String](String) |   |
+| `letterValues * ` | [List](LetterValue) |   |

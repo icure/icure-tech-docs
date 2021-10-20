@@ -1,106 +1,206 @@
 # Insurance
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance" method="post" summary="Creates an insurance." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/insurance" %}
+{% api-method-summary %}
+Creates an insurance
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="body" name="body" type="Insurance" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Insurance" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance/{insuranceId}" method="delete" summary="Deletes an insurance." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="insuranceId" type="String" %}
+{% api-method method="delete" host="https://demo.icure.cloud" path="/rest/v2/insurance/{insuranceId}" %}
+{% api-method-summary %}
+Deletes an insurance
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance/{insuranceId}" method="get" summary="Gets an insurance." %}
-{% swagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="insuranceId" type="String" required=true %}
 
-{% endswagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="path" name="insuranceId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/insurance/{insuranceId}" %}
+{% api-method-summary %}
+Gets an insurance
+{% endapi-method-summary %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance/byIds" method="post" summary="Gets insurances by id." %}
-{% swagger-description %}
+{% api-method-description %}
 
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="insuranceId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance/byCode/{insuranceCode}" method="get" summary="Gets an insurance." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/insurance/byIds" %}
+{% api-method-summary %}
+Gets insurances by id
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="insuranceCode" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance/byName/{insuranceName}" method="get" summary="Gets an insurance." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="path" name="insuranceName" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/insurance/byCode/{insuranceCode}" %}
+{% api-method-summary %}
+Gets an insurance
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/insurance" method="put" summary="Modifies an insurance." %}
-{% swagger-description %}
+{% endapi-method-description %}
 
-{% endswagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="insuranceCode" type="String" required=true %}
 
-{% swagger-parameter in="body" name="body" type="Insurance" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/insurance/byName/{insuranceName}" %}
+{% api-method-summary %}
+Gets an insurance
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="insuranceName" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/insurance" %}
+{% api-method-summary %}
+Modifies an insurance
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Insurance" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+

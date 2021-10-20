@@ -1,390 +1,609 @@
 # Message
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message" method="post" summary="Creates a message." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/message" %}
+{% api-method-summary %}
+Creates a message
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="body" name="body" type="Message" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Message" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/{messageId}/delegate/{delegateId}" method="delete" summary="Deletes a message delegation." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="messageId" type="String" %}
+{% api-method method="delete" host="https://demo.icure.cloud" path="/rest/v2/message/{messageId}/delegate/{delegateId}" %}
+{% api-method-summary %}
+Deletes a message delegation
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="delegateId" type="String" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="messageId" type="String" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="delegateId" type="String" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/{messageIds}" method="delete" summary="Deletes multiple messages." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="path" name="messageIds" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/message/delete/batch" %}
+{% api-method-summary %}
+Deletes multiple messages
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/delete/byIds" method="post" summary="Deletes multiple messages." %}
-{% swagger-description %}
+{% endapi-method-description %}
 
-{% endswagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message" method="get" summary="Get all messages (paginated) for current HC Party." %}
-{% swagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message" %}
+{% api-method-summary %}
+Get all messages (paginated) for current HC Party
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byFromAddress" method="get" summary="Get all messages (paginated) for current HC Party and provided from address." %}
-{% swagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/byFromAddress" %}
+{% api-method-summary %}
+Get all messages (paginated) for current HC Party and provided from address
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="query" name="fromAddress" type="String" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="fromAddress" type="String" required=false %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="hcpId" type="String" required=false %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="hcpId" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/byHcPartySecretForeignKeys" %}
+{% api-method-summary %}
+List messages found By Healthcare Party and secret foreign keys.
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byHcPartySecretForeignKeys" method="get" summary="List messages found By Healthcare Party and secret foreign keys.." %}
-{% swagger-description %}
+{% api-method-description %}
 Keys must be delimited by coma
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byToAddress" method="get" summary="Get all messages (paginated) for current HC Party and provided to address." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/byToAddress" %}
+{% api-method-summary %}
+Get all messages (paginated) for current HC Party and provided to address
+{% endapi-method-summary %}
 
-{% swagger-parameter in="query" name="toAddress" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="toAddress" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="reverse" type="Boolean" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="hcpId" type="String" required=false %}
 
-{% swagger-parameter in="query" name="reverse" type="Boolean" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="hcpId" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/byTransportGuid" %}
+{% api-method-summary %}
+Get all messages (paginated) for current HC Party and provided transportGuid
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byTransportGuid" method="get" summary="Get all messages (paginated) for current HC Party and provided transportGuid." %}
-{% swagger-description %}
+{% endapi-method-description %}
 
-{% endswagger-description %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="transportGuid" type="String" required=false %}
 
-{% swagger-parameter in="query" name="transportGuid" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="received" type="Boolean" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 
-{% swagger-parameter in="query" name="received" type="Boolean" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="hcpId" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/byTransportGuidSentDate" %}
+{% api-method-summary %}
+Get all messages starting by a prefix between two date
+{% endapi-method-summary %}
+
+{% api-method-description %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="transportGuid" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="from" type="Long" required=false %}
 
-{% swagger-parameter in="query" name="hcpId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="to" type="Long" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byTransportGuidSentDate" method="get" summary="Get all messages starting by a prefix between two date." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="hcpId" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="from" type="Long" %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/{messageId}/children" %}
+{% api-method-summary %}
+Get children messages of provided message
+{% endapi-method-summary %}
+
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="messageId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="to" type="Long" %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/message/{messageId}" %}
+{% api-method-summary %}
+Gets a message
+{% endapi-method-summary %}
+
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="messageId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/message/children/batch" %}
+{% api-method-summary %}
+Get children messages of provided message
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/message/byInvoice" %}
+{% api-method-summary %}
+Get children messages of provided message
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/message/byTransportGuid/list" %}
+{% api-method-summary %}
+Get all messages for current HC Party and provided transportGuids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcpId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/message" %}
+{% api-method-summary %}
+Updates a message
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Message" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/message/{messageId}/delegate" %}
+{% api-method-summary %}
+Adds a delegation to a message
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="messageId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/message/readstatus" %}
+{% api-method-summary %}
+Set read status for given list of messages
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="MessagesReadStatusUpdate" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/message/status/{status}" %}
+{% api-method-summary %}
+Set status bits for given list of messages
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="status" type="Integer" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="query" name="transportGuid" type="String" %}
 
-{% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="hcpId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/{messageId}/children" method="get" summary="Get children messages of provided message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="messageId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/children/batch" method="post" summary="Get children messages of provided message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/{messageId}" method="get" summary="Gets a message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="messageId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byInvoiceId" method="post" summary="Get children messages of provided message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/byTransportGuid/list" method="post" summary="Get all messages for current HC Party and provided transportGuids." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="hcpId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message" method="put" summary="Updates a message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="Message" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/{messageId}/delegate" method="put" summary="Adds a delegation to a message." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="messageId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="List" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/readstatus" method="put" summary="Set read status for given list of messages." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="MessagesReadStatusUpdate" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/message/status/{status}" method="put" summary="Set status bits for given list of messages." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="status" type="Integer" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}

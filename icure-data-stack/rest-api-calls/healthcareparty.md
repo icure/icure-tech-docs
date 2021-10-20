@@ -1,343 +1,555 @@
 # HealthcareParty
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty" method="post" summary="Create a healthcare party." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/hcparty" %}
+{% api-method-summary %}
+Create a healthcare party
+{% endapi-method-summary %}
+
+{% api-method-description %}
 One of Name or Last name+First name, Nihii, and Public key are required.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="body" name="body" type="HealthcareParty" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="HealthcareParty" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/inGroup/{groupId}" method="post" summary="Create a healthcare party." %}
-{% swagger-description %}
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/hcparty/inGroup/{groupId}" %}
+{% api-method-summary %}
+Create a healthcare party
+{% endapi-method-summary %}
+
+{% api-method-description %}
 One of Name or Last name+First name, Nihii, and Public key are required.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="groupId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="HealthcareParty" required=true %}
 
-{% swagger-parameter in="body" name="body" type="HealthcareParty" %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/{healthcarePartyIds}" method="delete" summary="Delete a healthcare party." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/hcparty/delete/batch" %}
+{% api-method-summary %}
+Delete healthcare parties
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deleting healthcareParties. Response is an array containing the id of deleted healthcare parties.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/hcparty/delete/batch/inGroup/{groupId}" %}
+{% api-method-summary %}
+Delete a healthcare party
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Deleting a healthcareParty. Response is an array containing the id of deleted healthcare party.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="healthcarePartyIds" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/inGroup/{groupId}/{healthcarePartyIds}" method="delete" summary="Delete a healthcare party." %}
-{% swagger-description %}
-Deleting a healthcareParty. Response is an array containing the id of deleted healthcare party.
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="path" name="groupId" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty" %}
+{% api-method-summary %}
+List healthcare parties with(out) pagination
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="healthcarePartyIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/byName" method="get" summary="Find healthcare parties by name with(out) pagination." %}
-{% swagger-description %}
+{% api-method-description %}
 Returns a list of healthcare parties.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="name" type="String" %}
-The Last name search value
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 A healthcare party Last name
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 A healthcare party document ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 Number of rows
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="desc" type="Boolean" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="desc" type="Boolean" required=false %}
 Descending
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/bySpecialityAndPostCode/{type}/{spec}/{firstCode}/to/{lastCode}" method="get" summary="Find healthcare parties by name with(out) pagination." %}
-{% swagger-description %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/byName" %}
+{% api-method-summary %}
+Find healthcare parties by name with(out) pagination
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Returns a list of healthcare parties.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="type" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="name" type="String" required=false %}
+The Last name search value
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
+A healthcare party Last name
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
+A healthcare party document ID
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
+Number of rows
+{% endapi-method-parameter %}
+{% api-method-parameter name="desc" type="Boolean" required=false %}
+Descending
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/bySpecialityAndPostCode/{type}/{spec}/{firstCode}/to/{lastCode}" %}
+{% api-method-summary %}
+Find healthcare parties by name with(out) pagination
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns a list of healthcare parties.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="type" type="String" required=true %}
 The type of the HCP (persphysician)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="spec" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="spec" type="String" required=true %}
 The speciality of the HCP
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="firstCode" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="firstCode" type="String" required=true %}
 The first postCode for the HCP
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="lastCode" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="lastCode" type="String" required=true %}
 The last postCode for the HCP
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 Number of rows
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/byNihiiOrSsin/{searchValue}" method="get" summary="Find healthcare parties by nihii or ssin with(out) pagination." %}
-{% swagger-description %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/byNihiiOrSsin/{searchValue}" %}
+{% api-method-summary %}
+Find healthcare parties by nihii or ssin with(out) pagination
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Returns a list of healthcare parties.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="searchValue" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="searchValue" type="String" required=true %}
 
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startKey" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="startKey" type="String" required=false %}
 A healthcare party Last name
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 A healthcare party document ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 Number of rows
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="desc" type="Boolean" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="desc" type="Boolean" required=false %}
 Descending
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/current" method="get" summary="Get the current healthcare party if logged in.." %}
-{% swagger-description %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/current" %}
+{% api-method-summary %}
+Get the current healthcare party if logged in.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 General information about the current healthcare Party
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/{healthcarePartyId}/keys" method="get" summary="Get the HcParty encrypted AES keys indexed by owner." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/byKeys/{healthcarePartyId}" %}
+{% api-method-summary %}
+Get the HcParty encrypted AES keys indexed by owner
+{% endapi-method-summary %}
+
+{% api-method-description %}
 (key, value) of the map is as follows: (ID of the owner of the encrypted AES key, encrypted AES key)
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="healthcarePartyId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="healthcarePartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/byIds/{healthcarePartyIds}" method="get" summary="Get healthcareParties by their IDs." %}
-{% swagger-description %}
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/hcparty/byIds" %}
+{% api-method-summary %}
+Get healthcareParties by their IDs
+{% endapi-method-summary %}
+
+{% api-method-description %}
 General information about the healthcare Party
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="healthcarePartyIds" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/{parentId}/children" method="get" summary="Find children of an healthcare parties." %}
-{% swagger-description %}
-Return a list of children hcp.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="parentId" type="String" %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/{healthcarePartyId}" %}
+{% api-method-summary %}
+Get a healthcareParty by his ID
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/inGroup/{groupId}/byIds" method="post" summary="Get healthcareParties by their IDs." %}
-{% swagger-description %}
+{% api-method-description %}
 General information about the healthcare Party
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="groupId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="healthcarePartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/{healthcarePartyId}/publicKey" %}
+{% api-method-summary %}
+Get public key of a healthcare party
+{% endapi-method-summary %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/{healthcarePartyId}" method="get" summary="Get a healthcareParty by his ID." %}
-{% swagger-description %}
-General information about the healthcare Party
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="healthcarePartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/{healthcarePartyId}/publicKey" method="get" summary="Get public key of a healthcare party." %}
-{% swagger-description %}
+{% api-method-description %}
 Returns the public key of a healthcare party in Hex
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="healthcarePartyId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="healthcarePartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/byNameStrict/{name}" method="get" summary="Find healthcare parties by name with(out) pagination." %}
-{% swagger-description %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/byNameStrict/{name}" %}
+{% api-method-summary %}
+Find healthcare parties by name with(out) pagination
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Returns a list of healthcare parties.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="name" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="name" type="String" required=true %}
 The Last name search value
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty" method="get" summary="List healthcare parties with(out) pagination." %}
-{% swagger-description %}
-Returns a list of healthcare parties.
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="startKey" type="String" %}
-A healthcare party Last name
-{% endswagger-parameter %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/hcparty/{parentId}/children" %}
+{% api-method-summary %}
+Find children of an healthcare parties
+{% endapi-method-summary %}
 
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
-A healthcare party document ID
-{% endswagger-parameter %}
+{% api-method-description %}
+Return a list of children hcp.
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="limit" type="Integer" %}
-Number of rows
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="parentId" type="String" required=true %}
 
-{% swagger-parameter in="query" name="desc" type="Boolean" %}
-Descending
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty" method="put" summary="Modify a Healthcare Party.." %}
-{% swagger-description %}
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/hcparty" %}
+{% api-method-summary %}
+Modify a Healthcare Party.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 No particular return value. It's just a message.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="body" name="body" type="HealthcareParty" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="HealthcareParty" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/hcparty/inGroup/{groupId}" method="put" summary="Modify a Healthcare Party.." %}
-{% swagger-description %}
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/hcparty/inGroup/{groupId}" %}
+{% api-method-summary %}
+Modify a Healthcare Party.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 No particular return value. It's just a message.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="groupId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="groupId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="HealthcareParty" required=true %}
 
-{% swagger-parameter in="body" name="body" type="HealthcareParty" %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="default response" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+
+

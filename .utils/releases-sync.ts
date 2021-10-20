@@ -149,10 +149,10 @@ async function sync(): Promise<void> {
             }))
         }
 
-        await Promise.all(tree.split("## ").map(async section => {
-            if (section.startsWith("iCure Data Model")) {
+        await Promise.all(tree.split(/\n(## |\* )/).map(async section => {
+            if (section.startsWith("[iCure Data Model]")) {
                 await copyMd(section, "./swagger/model");
-            } else if (section.startsWith("SDKS")) {
+            } else if (section.startsWith("[REST API calls]")) {
                 await copyMd(section, "./swagger/api", x => x.replace(/Api.md/,".md"));
             }
         }))
@@ -172,6 +172,8 @@ async function sync(): Promise<void> {
         await setModelsAndApis();
     }
 
+    return
+
     const commit = Deno.run({ cmd: ["git", "commit", "-am", "Updated from swagger, injected versions and code snippets"] });
     if ((await commit.status()).code) return
     commit.close()
@@ -179,7 +181,6 @@ async function sync(): Promise<void> {
     const push = Deno.run({ cmd: ["git", "push"] });
     if ((await push.status()).code) return
     push.close()
-
 }
 
 await sync()

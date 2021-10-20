@@ -1,572 +1,1028 @@
 # Invoice
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byauthor/{userId}/append/{type}/{sentMediumType}" method="post" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/byauthor/{userId}/append/{type}/{sentMediumType}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="userId" type="String" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="userId" type="String" required=true %}
 
-{% swagger-parameter in="path" name="type" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="type" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="sentMediumType" type="String" required=true %}
 
-{% swagger-parameter in="path" name="sentMediumType" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="insuranceId" type="String" required=false %}
 
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="invoiceId" type="String" required=false %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="gracePeriod" type="Integer" required=false %}
 
-{% swagger-parameter in="query" name="insuranceId" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-parameter in="query" name="invoiceId" type="String" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="gracePeriod" type="Integer" %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice" %}
+{% api-method-summary %}
+Creates an invoice
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
 
-{% swagger-parameter in="body" name="body" type="List" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Invoice" required=true %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice" method="post" summary="Creates an invoice." %}
-{% swagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="body" type="Invoice" %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/batch" %}
+{% api-method-summary %}
+Create a batch of invoices
+{% endapi-method-summary %}
 
-{% endswagger-parameter %}
+{% api-method-description %}
+Returns the created invoices.
+{% endapi-method-description %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/{invoiceId}" method="delete" summary="Deletes an invoice." %}
-{% swagger-description %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-description %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-parameter in="path" name="invoiceId" type="String" %}
 
-{% endswagger-parameter %}
+{% api-method method="delete" host="https://demo.icure.cloud" path="/rest/v2/invoice/{invoiceId}" %}
+{% api-method-summary %}
+Deletes an invoice
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-description %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/filter" method="post" summary="Filter invoices for the current user (HcParty)." %}
-{% swagger-description %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/filter" %}
+{% api-method-summary %}
+Filter invoices for the current user (HcParty)
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Returns a list of invoices along with next start keys and Document ID. If the nextStartKey is Null it means that this is the last page.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="body" name="body" type="FilterChainInvoice" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="FilterChainInvoice" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byauthor/{hcPartyId}" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byauthor/{hcPartyId}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="hcPartyId" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="fromDate" type="Long" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="fromDate" type="Long" required=false %}
 
-{% swagger-parameter in="query" name="toDate" type="Long" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="toDate" type="Long" required=false %}
 
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startKey" type="String" %}
-The start key for pagination: a JSON representation of an array containing all the necessary components to form the Complex Key's startKey
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="startDocumentId" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="startKey" type="String" required=false %}
+The start key for pagination: a JSON representation of an array containing all the necessary components to form the Complex Key&#x27;s startKey
+{% endapi-method-parameter %}
+{% api-method-parameter name="startDocumentId" type="String" required=false %}
 A patient document ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="Integer" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="limit" type="Integer" required=false %}
 Number of rows
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byHcPartySecretForeignKeys" method="get" summary="List invoices found By Healthcare Party and secret foreign patient keys.." %}
-{% swagger-description %}
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/{invoiceId}" %}
+{% api-method-summary %}
+Gets an invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/byIds" %}
+{% api-method-summary %}
+Gets an invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/codes/{minOccurences}" %}
+{% api-method-summary %}
+Get the list of all used tarifications frequencies in invoices
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="minOccurences" type="Long" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/allHcpsByStatus/{status}" %}
+{% api-method-summary %}
+Gets all invoices per status
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="status" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="from" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="to" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/byContacts" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byHcPartySecretForeignKeys" %}
+{% api-method-summary %}
+List invoices found By Healthcare Party and secret foreign patient keys.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Keys have to delimited by coma
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="hcPartyId" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
 
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% endswagger-parameter %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byHcPartySecretForeignKeys/delegations" method="get" summary="List helement stubs found By Healthcare Party and secret foreign keys.." %}
-{% swagger-description %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byHcPartyGroupId/{hcPartyId}/{groupId}" %}
+{% api-method-summary %}
+List invoices by groupId
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Keys have to delimited by coma
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="groupId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byHcParty/{hcPartyId}/mediumType/{sentMediumType}/invoiceType/{invoiceType}/sent/{sent}" %}
+{% api-method-summary %}
+List invoices by type, sent or unsent
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Keys have to delimited by coma
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="sentMediumType" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="invoiceType" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="sent" type="Boolean" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="from" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="to" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byHcpartySendingModeStatusDate/{hcPartyId}" %}
+{% api-method-summary %}
+Get all invoices by author, by sending mode, by status and by date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="sendingMode" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="status" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="from" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="to" type="Long" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byIds/{invoiceIds}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceIds" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/to/{recipientIds}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="recipientIds" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byServiceIds/{serviceIds}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="serviceIds" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/byHcPartySecretForeignKeys/delegations" %}
+{% api-method-summary %}
+List helement stubs found By Healthcare Party and secret foreign keys.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Keys must be delimited by coma
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/{invoiceId}" method="get" summary="Gets an invoice." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="invoiceId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byIds" method="post" summary="Gets an invoice." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/codes/{minOccurences}" method="get" summary="Get the list of all used tarifications frequencies in invoices." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="minOccurences" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/allHcpsByStatus/{status}" method="post" summary="Gets all invoices per status." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="status" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="from" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="to" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byCtcts" method="post" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byHcPartyGroupId/{hcPartyId}/{groupId}" method="get" summary="List invoices by groupId." %}
-{% swagger-description %}
-Keys have to delimited by coma
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="groupId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byHcParty/{hcPartyId}/mediumType/{sentMediumType}/invoiceType/{invoiceType}/sent/{sent}" method="get" summary="List invoices by type, sent or unsent." %}
-{% swagger-description %}
-Keys have to delimited by coma
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="sentMediumType" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="invoiceType" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="sent" type="Boolean" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="from" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="to" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byHcpartySendingModeStatusDate/{hcPartyId}" method="get" summary="Get all invoices by author, by sending mode, by status and by date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="sendingMode" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="status" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="from" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="to" type="Long" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byIds/{invoiceIds}" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="invoiceIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/to/{recipientIds}" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="recipientIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byServiceIds/{serviceIds}" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="serviceIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/toInsurances" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="userIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/toInsurances/unsent" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="userIds" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/toPatients" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/toPatients/unsent" method="get" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="hcPartyId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/mergeTo/{invoiceId}" method="post" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="invoiceId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="ListOfIds" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice" method="put" summary="Modifies an invoice." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="Invoice" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/{invoiceId}/delegate" method="put" summary="Adds a delegation to a invoice." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="invoiceId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="List" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/reassign" method="post" summary="Modifies an invoice." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="body" name="body" type="Invoice" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/byauthor/{userId}/service/{serviceId}" method="post" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="userId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="path" name="serviceId" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="secretFKeys" type="String" %}
-
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="body" type="List" %}
-
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/delegations" method="post" summary="Update delegations in healthElements.." %}
-{% swagger-description %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/toInsurances" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="userIds" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/toInsurances/unsent" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="userIds" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/toPatients" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/invoice/toPatients/unsent" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/mergeTo/{invoiceId}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="ListOfIds" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/invoice" %}
+{% api-method-summary %}
+Modifies an invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Invoice" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/invoice/batch" %}
+{% api-method-summary %}
+Modify a batch of invoices
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Returns the modified invoices.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/invoice/{invoiceId}/delegate" %}
+{% api-method-summary %}
+Adds a delegation to a invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/reassign" %}
+{% api-method-summary %}
+Modifies an invoice
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Invoice" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/byauthor/{userId}/service/{serviceId}" %}
+{% api-method-summary %}
+Remove an invoice of an user
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="userId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="serviceId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="secretFKeys" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/delegations" %}
+{% api-method-summary %}
+Update delegations in healthElements.
+{% endapi-method-summary %}
+
+{% api-method-description %}
 Keys must be delimited by coma
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="body" name="body" type="List" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="List" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v1/invoice/validate/{invoiceId}" method="post" summary="Gets all invoices for author at date." %}
-{% swagger-description %}
 
-{% endswagger-description %}
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/invoice/validate/{invoiceId}" %}
+{% api-method-summary %}
+Gets all invoices for author at date
+{% endapi-method-summary %}
 
-{% swagger-parameter in="path" name="invoiceId" type="String" %}
+{% api-method-description %}
 
-{% endswagger-parameter %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="query" name="scheme" type="String" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="invoiceId" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="scheme" type="String" required=true %}
 
-{% swagger-parameter in="query" name="forcedValue" type="String" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="forcedValue" type="String" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="OK" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+

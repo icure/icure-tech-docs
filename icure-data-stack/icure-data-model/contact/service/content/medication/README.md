@@ -2,47 +2,48 @@
 
 The details of prescribed or suggested medication
 
+
 ## Properties
 
-| Property                          | Type                                                                                                                                                                                       | Description    |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `compoundPrescription`            | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `substanceProduct`                | [Substanceproduct](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Substanceproduct/README.md) |                |
-| `medicinalProduct`                | [Medicinalproduct](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Medicinalproduct/README.md) |                |
-| `numberOfPackages`                | [Integer](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Integer/README.md)                   | format: int32. |
-| `batch`                           | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `instructionForPatient`           | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `commentForDelivery`              | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `drugRoute`                       | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `temporality`                     | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `frequency`                       | [CodeStub](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/CodeStub/README.md)                 |                |
-| `reimbursementReason`             | [CodeStub](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/CodeStub/README.md)                 |                |
-| `substitutionAllowed`             | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `beginMoment`                     | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `endMoment`                       | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `deliveryMoment`                  | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `endExecutionMoment`              | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `duration`                        | [Duration](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Duration/README.md)                 |                |
-| `renewal`                         | [Renewal](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Renewal/README.md)                   |                |
-| `knownUsage`                      | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `regimen`                         | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/RegimenItem/README.md)                  |                |
-| `posology`                        | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `agreements`                      | [Map](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/ParagraphAgreement/README.md)            |                |
-| `medicationSchemeIdOnSafe`        | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `medicationSchemeSafeVersion`     | [Integer](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Integer/README.md)                   | format: int32. |
-| `medicationSchemeTimeStampOnSafe` | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `medicationSchemeDocumentId`      | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `safeIdName`                      | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `idOnSafes`                       | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `timestampOnSafe`                 | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Long/README.md)                         | format: int64. |
-| `changeValidated`                 | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `newSafeMedication`               | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `medicationUse`                   | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `beginCondition`                  | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `endCondition`                    | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `origin`                          | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `medicationChanged`               | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `posologyChanged`                 | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Boolean/README.md)                   |                |
-| `suspension`                      | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Suspension/README.md)                   |                |
-| `prescriptionRID`                 | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/String/README.md)                     |                |
-| `status`                          | [Integer](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/medication/Integer/README.md)                   | format: int32. |
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `compoundPrescription ` | [String](String) |   |
+| `substanceProduct ` | [Substanceproduct](Substanceproduct) |   |
+| `medicinalProduct ` | [Medicinalproduct](Medicinalproduct) |   |
+| `numberOfPackages ` | [Integer](Integer) |  format: int32. |
+| `batch ` | [String](String) |   |
+| `instructionForPatient ` | [String](String) |   |
+| `commentForDelivery ` | [String](String) |   |
+| `drugRoute ` | [String](String) |   |
+| `temporality ` | [String](String) |   |
+| `frequency ` | [CodeStub](CodeStub) |   |
+| `reimbursementReason ` | [CodeStub](CodeStub) |   |
+| `substitutionAllowed ` | [Boolean](Boolean) |   |
+| `beginMoment ` | [Long](Long) |  format: int64. |
+| `endMoment ` | [Long](Long) |  format: int64. |
+| `deliveryMoment ` | [Long](Long) |  format: int64. |
+| `endExecutionMoment ` | [Long](Long) |  format: int64. |
+| `duration ` | [Duration](Duration) |   |
+| `renewal ` | [Renewal](Renewal) |   |
+| `knownUsage ` | [Boolean](Boolean) |   |
+| `regimen ` | [List](RegimenItem) |   |
+| `posology ` | [String](String) |   |
+| `agreements ` | [Map](ParagraphAgreement) |   |
+| `medicationSchemeIdOnSafe ` | [String](String) |   |
+| `medicationSchemeSafeVersion ` | [Integer](Integer) |  format: int32. |
+| `medicationSchemeTimeStampOnSafe ` | [Long](Long) |  format: int64. |
+| `medicationSchemeDocumentId ` | [String](String) |   |
+| `safeIdName ` | [String](String) |   |
+| `idOnSafes ` | [String](String) |   |
+| `timestampOnSafe ` | [Long](Long) |  format: int64. |
+| `changeValidated ` | [Boolean](Boolean) |   |
+| `newSafeMedication ` | [Boolean](Boolean) |   |
+| `medicationUse ` | [String](String) |   |
+| `beginCondition ` | [String](String) |   |
+| `endCondition ` | [String](String) |   |
+| `origin ` | [String](String) |   |
+| `medicationChanged ` | [Boolean](Boolean) |   |
+| `posologyChanged ` | [Boolean](Boolean) |   |
+| `suspension ` | [List](Suspension) |   |
+| `prescriptionRID ` | [String](String) |   |
+| `status ` | [Integer](Integer) |  format: int32. |

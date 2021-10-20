@@ -1,16 +1,19 @@
 # Content
 
+
 ## Properties
 
-| Property          | Type                                                                                                                                                                | Description                                                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `stringValue`     | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/String/README.md)         |                                                                                                                                                    |
-| `numberValue`     | [Double](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Double/README.md)         | format: double.                                                                                                                                    |
-| `booleanValue`    | [Boolean](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Boolean/README.md)       |                                                                                                                                                    |
-| `instantValue`    | [Date](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Date/README.md)             | format: date-time.                                                                                                                                 |
-| `fuzzyDateValue`  | [Long](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Long/README.md)             | Known values in a date. The format could have a all three (day, month and year) or values on any of these three, whatever is known. format: int64. |
-| `binaryValue`     | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Byte\[]/README.md)          | format: byte.                                                                                                                                      |
-| `documentId`      | [String](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/String/README.md)         | Id of the document in which the content is being filled.                                                                                           |
-| `measureValue`    | [Measure](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Measure/README.md)       |                                                                                                                                                    |
-| `medicationValue` | [Medication](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Medication/README.md) |                                                                                                                                                    |
-| `compoundValue`   | [List](https://github.com/taktik/icure-tech-docs/tree/5af8e13c187f73691c350b409b558ac754efaef8/icure-data-model/contact/service/content/Service/README.md)          | The service for which the content is being filled                                                                                                  |
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `stringValue ` | [String](String) |   |
+| `numberValue ` | [Double](Double) |  format: double. |
+| `booleanValue ` | [Boolean](Boolean) |   |
+| `instantValue ` | [Date](Date) |  format: date-time. |
+| `fuzzyDateValue ` | [Long](Long) | Known values in a date. The format could have a all three (day, month and year) or values on any of these three, whatever is known. format: int64. |
+| `binaryValue ` | [Byte[]](Byte[]) |  format: byte. |
+| `documentId ` | [String](String) | Id of the document in which the content is being filled.  |
+| `measureValue ` | [Measure](Measure) |   |
+| `medicationValue ` | [Medication](Medication) |   |
+| `compoundValue ` | [List](Service) | The service for which the content is being filled  |
+| `ratio ` | [List](Measure) |   |
+| `range ` | [List](Measure) |   |
