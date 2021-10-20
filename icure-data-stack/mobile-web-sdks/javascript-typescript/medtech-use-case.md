@@ -2,9 +2,10 @@
 
 .This section describes all you need to do to create patients, observations/measures for that patient, and export those data in FHIR.
 
-### Authenticating to iCure from your code
+### Authenticating with iCure from your code
 
-Once you have an iCure account, you can dive into writing some code. You will need the private key that has been created when you have accessed your database environment for the first time. In the following example, the private key is `MIIEvAIBAD...`
+Once you have an iCure account, you can dive into writing some code. You will need the private key that has been created when you have accessed your database environment for the first time. 
+In the following example, the private key is `MIIEvAIBAD...9HOmEwWQ==`.
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -35,4 +36,44 @@ await cryptoApi.checkPrivateKeyValidity(loggedHcp)
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+### Create a patient
+
+Once you are authenticated, you can easily create a patient. The Patient data model is described here.
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Create a patient" %}
+```javascript
+const patient = await patientApi.createPatientWithUser(loggedUser,
+    await patientApi.newInstance(
+        loggedUser,
+        new Patient({
+            firstName: 'Gustave',
+            lastName: 'Eiffel',
+            dateOfBirth:19731011,
+            note: 'A very private information'
+        }))
+)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Load a patient
+
+If you ever need to find back a patient, you can do it like this.
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Load a patient by id" %}
+```javascript
+const fetchedPatient = await patientApi.getPatientWithUser(loggedUser, patient.id)
+console.log(JSON.stringify(fetchedPatient, null, ' '))
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
 
