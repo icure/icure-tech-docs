@@ -15,7 +15,7 @@ import {
 import {crypto} from '@icure/api/node-compat.js'
 
 const host = 'https://kraken.icure.dev/rest/v1';
-const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'esmith', 'mypassword', crypto)
+const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'el-smith', 'mypassword', crypto)
 
 const loggedUser = await userApi.getCurrentUser();
 const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
@@ -36,7 +36,7 @@ const patient = await patientApi.createPatientWithUser(loggedUser,
         new Patient({
             firstName: 'Gustave',
             lastName: 'Eiffel',
-            dateOfBirth:19731011,
+            dateOfBirth:19731012,
             note: 'A very private information'
         }))
 )
@@ -103,6 +103,8 @@ const search4 = await patientApi.filterByWithUser(loggedUser, new FilterChainPat
 )
 ```
 {% endcode %}
+
+
 
 
 
