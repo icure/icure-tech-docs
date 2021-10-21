@@ -15,5 +15,5 @@ Download the latest version of the jar distribution: [icure-oss-3.0.1-108-g1e3bc
 ### Using Docker
 
 ```
-docker run -p 16043:16043 docker.taktik.be/icure-oss
+docker run -p 16043:16043 icureio/icure-oss
 ```
