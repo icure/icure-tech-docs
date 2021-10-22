@@ -1,6 +1,6 @@
 # Encryption Key Creation and Storage
 
-For the purposes of this example we assume the following structure:\
+For the purposes of this example, we assume the following structure:\
 \
 iCure is installed for a Healthcare Group, with several Practices, that employ several Healthcare Providers (HcP1, HcP2) with several users each.
 

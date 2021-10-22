@@ -1,544 +1,287 @@
 # Document
 
-{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/document" %}
-{% api-method-summary %}
-Creates a document
-{% endapi-method-summary %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document" method="post" summary="Creates a document" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="body" type="Document" required="true" in="body" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="Document" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment" method="delete" summary="Deletes a document's attachment" %}
+{% swagger-description %}
 
-{% api-method method="delete" host="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment" %}
-{% api-method-summary %}
-Deletes a document's attachment
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
+{% swagger-parameter name="documentId" type="String" required="true" in="path" %}
 
-{% endapi-method-description %}
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% swagger-response status="200" description="" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/delete/batch" method="post" summary="Deletes documents" %}
+{% swagger-description %}
 
+{% endswagger-description %}
 
-{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/document/delete/batch" %}
-{% api-method-summary %}
-Deletes documents
-{% endapi-method-summary %}
+{% swagger-parameter name="body" type="ListOfIds" required="true" in="body" %}
 
-{% api-method-description %}
+{% endswagger-parameter %}
 
-{% endapi-method-description %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="ListOfIds" required=true %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/woDelegation" %}
-{% api-method-summary %}
-List documents with no delegation
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/woDelegation" method="get" summary="List documents with no delegation" %}
+{% swagger-description %}
 Keys must be delimited by coma
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="limit" type="Integer" required=false %}
+{% swagger-parameter name="limit" type="Integer" required="false" in="query" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-response status="200" description="" %}
 
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/{documentId}" %}
-{% api-method-summary %}
-Gets a document
-{% endapi-method-summary %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/{documentId}" method="get" summary="Gets a document" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="documentId" type="String" required="true" in="path" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment/{attachmentId}" method="get" summary="Load document's attachment" %}
+{% swagger-description %}
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment/{attachmentId}" %}
-{% api-method-summary %}
-Load document's attachment
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
+{% swagger-parameter name="documentId" type="String" required="true" in="path" %}
 
-{% endapi-method-description %}
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% swagger-parameter name="attachmentId" type="String" required="true" in="path" %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="attachmentId" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="enckeys" type="String" required=false %}
+{% swagger-parameter name="enckeys" type="String" required="false" in="query" %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="fileName" type="String" required=false %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter name="fileName" type="String" required="false" in="query" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="" %}
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/externaluuid/{externalUuid}" %}
-{% api-method-summary %}
-Gets a document
-{% endapi-method-summary %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/externaluuid/{externalUuid}" method="get" summary="Gets a document" %}
+{% swagger-description %}
 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="externalUuid" type="String" required=true %}
+{% swagger-parameter name="externalUuid" type="String" required="true" in="path" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-response status="200" description="" %}
 
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/document/byIds" %}
-{% api-method-summary %}
-Gets a document
-{% endapi-method-summary %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/byIds" method="post" summary="Gets a document" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="body" type="ListOfIds" required="true" in="body" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="ListOfIds" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/externaluuid/{externalUuid}/all" method="get" summary="Get all documents with externalUuid" %}
+{% swagger-description %}
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/externaluuid/{externalUuid}/all" %}
-{% api-method-summary %}
-Get all documents with externalUuid
-{% endapi-method-summary %}
+{% endswagger-description %}
 
-{% api-method-description %}
+{% swagger-parameter name="externalUuid" type="String" required="true" in="path" %}
 
-{% endapi-method-description %}
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="externalUuid" type="String" required=true %}
+{% swagger-response status="200" description="" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/byTypeHcPartySecretForeignKeys" %}
-{% api-method-summary %}
-List documents found By type, By Healthcare Party and secret foreign keys.
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/byTypeHcPartySecretForeignKeys" method="get" summary="List documents found By type, By Healthcare Party and secret foreign keys." %}
+{% swagger-description %}
 Keys must be delimited by coma
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="documentTypeCode" type="String" required=true %}
+{% swagger-parameter name="documentTypeCode" type="String" required="true" in="query" %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="hcPartyId" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="secretFKeys" type="String" required=true %}
+{% swagger-parameter name="hcPartyId" type="String" required="true" in="query" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-parameter name="secretFKeys" type="String" required="true" in="query" %}
 
+{% endswagger-parameter %}
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/document/byHcPartySecretForeignKeys" %}
-{% api-method-summary %}
-List documents found By Healthcare Party and secret foreign keys.
-{% endapi-method-summary %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-description %}
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/byHcPartySecretForeignKeys" method="get" summary="List documents found By Healthcare Party and secret foreign keys." %}
+{% swagger-description %}
 Keys must be delimited by coma
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="hcPartyId" type="String" required=true %}
+{% swagger-parameter name="hcPartyId" type="String" required="true" in="query" %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="secretFKeys" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter name="secretFKeys" type="String" required="true" in="query" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="" %}
 
-{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/document" %}
-{% api-method-summary %}
-Updates a document
-{% endapi-method-summary %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document" method="put" summary="Updates a document" %}
+{% swagger-description %}
 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="Document" required=true %}
+{% swagger-parameter name="body" type="Document" required="true" in="body" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-response status="200" description="" %}
 
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/document/batch" %}
-{% api-method-summary %}
-Updates a batch of documents
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/batch" method="put" summary="Updates a batch of documents" %}
+{% swagger-description %}
 Returns the modified documents.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="List" required=true %}
+{% swagger-parameter name="body" type="List" required="true" in="body" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-response status="200" description="" %}
 
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment" %}
-{% api-method-summary %}
-Creates a document's attachment
-{% endapi-method-summary %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment" method="put" summary="Creates a document's attachment" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="documentId" type="String" required="true" in="path" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="enckeys" type="String" required=false %}
+{% swagger-parameter name="enckeys" type="String" required="false" in="query" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="Object" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter name="body" type="Object" required="true" in="body" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="" %}
 
-{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment/multipart" %}
-{% api-method-summary %}
-Creates a document's attachment
-{% endapi-method-summary %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method-description %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/{documentId}/attachment/multipart" method="put" summary="Creates a document's attachment" %}
+{% swagger-description %}
 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% swagger-parameter name="documentId" type="String" required="true" in="path" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="enckeys" type="String" required=false %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% api-method-form-parameters %}
-{% api-method-parameter name="attachment" type="Byte[]" required=false %}
+{% swagger-parameter name="enckeys" type="String" required="false" in="query" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-parameter name="attachment" type="Byte[]" required="false" in="form" %}
 
+{% endswagger-parameter %}
 
-{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/document/delegations" %}
-{% api-method-summary %}
-Update delegations in healthElements.
-{% endapi-method-summary %}
+{% swagger-response status="200" description="" %}
 
-{% api-method-description %}
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/delegations" method="post" summary="Update delegations in healthElements." %}
+{% swagger-description %}
 Keys must be delimited by coma
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="List" required=true %}
+{% swagger-parameter name="body" type="List" required="true" in="body" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% swagger-response status="200" description="" %}
 
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="put" host="https://demo.icure.cloud" path="/rest/v2/document/attachment" %}
-{% api-method-summary %}
-Creates a document's attachment
-{% endapi-method-summary %}
+{% swagger baseUrl="https://demo.icure.cloud" path="/rest/v2/document/attachment" method="put" summary="Creates a document's attachment" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="documentId" type="String" required="true" in="query" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="documentId" type="String" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% api-method-parameter name="enckeys" type="String" required=false %}
+{% swagger-parameter name="enckeys" type="String" required="false" in="query" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="body" type="Object" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter name="body" type="Object" required="true" in="body" %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OK
-{% endapi-method-response-example-description %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="" %}
 
-
+{% endswagger-response %}
+{% endswagger %}

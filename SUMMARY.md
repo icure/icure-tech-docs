@@ -3,6 +3,16 @@
 * [Developer Documentation](README.md)
 * [iCure Software Modules](icure-software-modules.md)
 
+## Get Started
+
+* [Create your own Database](get-started/create-your-own-database/README.md)
+  * [Receive an invitation](get-started/create-your-own-database/receive-an-invitation.md)
+  * [Create new User](get-started/create-your-own-database/create-new-user.md)
+  * [Create a new Healthcare Party](get-started/create-your-own-database/create-a-new-healthcare-party.md)
+* [Structure your Database](get-started/structure-your-database.md)
+* [Access your database](get-started/access-your-database.md)
+* [Use the Console](get-started/use-the-console.md)
+
 ## Data Stack Module <a href="icure-data-stack" id="icure-data-stack"></a>
 
 * [The Data Stack](icure-data-stack/what-is-icure/README.md)
