@@ -39,11 +39,13 @@ let key = {
     key: '308204bd02...8b40fdc0bc'
 }
 
+let credentials = 'Y3ZAdGFrdG...MzOGY1MTQ='
+
 let keyPutInCache = await fetch(`${host}/rest/icdx/v1/keychain/${hcpId}`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     },
     body: JSON.stringify(key)
 })
@@ -164,7 +166,7 @@ let createdPatient = await fetch(`${host}/rest/fhir/r4/Patient`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     },
     body: JSON.stringify(patientToCreate)
 })
@@ -186,7 +188,7 @@ Find a patient, using either its FHIR id or its iCure id.
 let fetchedPatient = await fetch(`${host}/rest/fhir/r4/Patient/pat1`, {
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     }
 })
     .then(response => response.json());
@@ -207,7 +209,7 @@ Delete a patient, using either its FHIR id or its iCure id.
 let deletedPatient = await fetch(`${host}/rest/fhir/r4/Patient?name=Donald`, {
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     }
 });
 ```
@@ -233,7 +235,7 @@ let searchedPatients = await fetch(`${host}/rest/fhir/r4/Patient?_id=pat2&name=D
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     }
 })
     .then(response => response.json());
@@ -332,7 +334,7 @@ let createdObservation = await fetch(`${host}/rest/fhir/r4/Observation`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     },
     body: JSON.stringify(observationToCreate)
 })
@@ -354,7 +356,7 @@ Find an observation, using either its FHIR id or its iCure id.
 let fetchedObservation = await fetch(`${host}/rest/fhir/r4/Observation/f001`, {
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     }
 })
     .then(response => response.json());
@@ -384,7 +386,7 @@ let searchedObservations = await fetch(`${host}/rest/fhir/r4/Observation?_tag=ht
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     }
 })
     .then(response => response.json());
@@ -568,7 +570,7 @@ let createdBundle = await fetch(`${host}/rest/fhir/r4`, {
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': /* truncate */ 'Basic Y3ZAdGFrdGlrLmNvbTpjMjdiZGUxNi0yN2E1LTRjMDctOTQ4MC1mYjdmOWMzOGY1MTQ='
+        'Authorization': `Basic ${credentials}`
     },
     body: JSON.stringify(bundleToCreate)
 })
@@ -579,4 +581,5 @@ console.log(`Created FHIR Bundle : ${JSON.stringify(createdBundle, null, ' ')}`)
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 
