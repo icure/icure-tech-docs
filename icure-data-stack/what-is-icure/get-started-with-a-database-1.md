@@ -26,7 +26,7 @@ Now create a file name index.mjs
 
 {% code title="How to use" %}
 ```javascript
-import {Api, b64_2ua, Patient} from '@icure/api'
+import {Api, hex2ua, Patient} from '@icure/api'
 import {crypto} from '@icure/api/node-compat.js'
 
 const host = 'https://kraken.icure.dev/rest/v1';
@@ -42,7 +42,7 @@ const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
 
 await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
 	loggedUser.healthcarePartyId,
-	b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+	hex2ua("308204bc02...473a613059")
 )
 
 const patient = await patientApi.createPatientWithUser(loggedUser,
@@ -70,6 +70,7 @@ $ node index.mjs
 ```
 
 ##
+
 
 
 

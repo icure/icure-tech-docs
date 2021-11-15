@@ -2,5 +2,8 @@
   "name": "tech-doc-utils",
   "version": "0.0.1",
   "main": "index.ts",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "curlconverter": "^3.21.0"
+  }
 }

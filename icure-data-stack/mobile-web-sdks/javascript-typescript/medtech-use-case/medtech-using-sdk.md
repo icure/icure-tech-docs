@@ -35,7 +35,7 @@ import {
     FilterChainPatient,
     Patient,
     PatientByHcPartyNameContainsFuzzyFilter,
-    b64_2ua
+    hex2ua
 } from '@icure/api'
 import {crypto} from '@icure/api/node-compat.js'
 
@@ -47,7 +47,7 @@ const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
 
 await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
     loggedUser.healthcarePartyId,
-    b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+    hex2ua("308204bc02...473a613059")
 )
 await cryptoApi.checkPrivateKeyValidity(loggedHcp)
 ```
@@ -71,7 +71,7 @@ const patient = await patientApi.createPatientWithUser(loggedUser,
         new Patient({
             firstName: 'Gustave',
             lastName: 'Eiffel',
-            dateOfBirth:19731012,
+            dateOfBirth:19731011,
             note: 'A very private information'
         }))
 )
@@ -226,6 +226,7 @@ const contact = await contactApi.createContactWithUser(loggedUser,
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 
 
 
