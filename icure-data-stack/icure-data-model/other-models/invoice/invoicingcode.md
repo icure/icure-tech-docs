@@ -45,6 +45,7 @@
 | `prescriberCdHcParty ` | [String](String) |   |
 | `locationNihii ` | [String](String) |   |
 | `locationCdHcParty ` | [String](String) |   |
+| `locationService ` | [Integer](Integer) |  format: int32. |
 | `canceled ` | [Boolean](Boolean) |   |
 | `accepted ` | [Boolean](Boolean) |   |
 | `pending ` | [Boolean](Boolean) |   |

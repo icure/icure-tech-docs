@@ -15,7 +15,7 @@ Make sure to be registered on the [iCure Cloud Manager](README.md) before going 
 
 #### Setting up your environment
 As soon as you have access to iCure (online or locally), you will need to set up your environment.
-To do this, you can follow this [example](../../what-is-icure/get-started-with-a-database-1.md) which will help you 
+To do this, you can follow this [example](../../../what-is-icure/get-started-with-a-database-1.md) which will help you 
 initialize a node application communicating with the iCure solution.
 
 #### Authenticating with iCure from your code
@@ -40,7 +40,7 @@ import {
 import {crypto} from '@icure/api/node-compat.js'
 
 const host = 'https://kraken.icure.dev/rest/v1';
-const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'el-smith', 'mypassword', crypto)
+const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'esmith', 'mypassword', crypto)
 
 const loggedUser = await userApi.getCurrentUser();
 const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
@@ -59,7 +59,7 @@ await cryptoApi.checkPrivateKeyValidity(loggedHcp)
 ### Making requests using iCure SDK
 #### Create a patient
 Once you are authenticated, you can easily create a patient. The Patient data model is described
-[here](../../icure-data-model/patient/README.md).
+[here](../../../icure-data-model/patient/README.md).
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -84,7 +84,7 @@ As you can see in the code above, we are using some specific API methods to crea
 instead of **createPatient**, **api.newInstance** instead of "only" creating a new object, ...). This is because those
 methods are taking care of the data end-to-end encryption for us.
 
-We encourage you to have a look at our [secured e2e encryption guidelines](../../../icure-data-stack/what-is-icure/README.md)
+We encourage you to have a look at our [secured e2e encryption guidelines](../../../../icure-data-stack/what-is-icure/README.md)
 in order to know all about them.
 
 #### Load a patient
@@ -165,12 +165,12 @@ const search4 = await patientApi.filterByWithUser(loggedUser, new FilterChainPat
 
 #### Add medical data to patient
 In iCure, medical data is stored inside contacts.
-A [contact](../../icure-data-model/contact/README.md) groups a batch of measures/observations (represented in iCure
-data model as [services](../../icure-data-model/contact/service/README.md)) in one single transaction.
+A [contact](../../../icure-data-model/contact/README.md) groups a batch of measures/observations (represented in iCure
+data model as [services](../../../icure-data-model/contact/service/README.md)) in one single transaction.
 A contact always links together a healthcare party (A care provider) to one patient.
 
 Before adding new medical data into the iCure system, you then absolutely need to create :
-- a [healthcare party](../../icure-data-model/healthcareparty.md);
+- a [healthcare party](../../../icure-data-model/healthcareparty.md);
 - a patient (See sections **Create a patient** and **Load a patient** for more information);
 
 The following code shows you how to create an observation, represented in iCure system as a contact containing a service.
@@ -226,3 +226,6 @@ const contact = await contactApi.createContactWithUser(loggedUser,
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+
+

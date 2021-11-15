@@ -43,6 +43,7 @@ This entity is a root level object. It represents a healthcare party. It is seri
 | `type ` | [String](String) |   |
 | `contactPerson ` | [String](String) |   |
 | `contactPersonHcpId ` | [String](String) |   |
+| `supervisorId ` | [String](String) |   |
 | `flatRateTarifications * ` | [List](FlatRateTarification) |   |
 | `importedData * ` | [Map](String) |   |
 | `options * ` | [Map](String) |   |

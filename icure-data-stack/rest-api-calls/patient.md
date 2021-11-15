@@ -511,7 +511,7 @@ OK
 {% endapi-method %}
 
 
-{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/patient/{hcPartyId}/{system}/{id}" %}
+{% api-method method="get" host="https://demo.icure.cloud" path="/rest/v2/patient/{hcPartyId}/{id}" %}
 {% api-method-summary %}
 Get patient by identifier
 {% endapi-method-summary %}
@@ -526,13 +526,15 @@ It gets patient administrative data based on the identifier (root & extension) p
 {% api-method-parameter name="hcPartyId" type="String" required=true %}
 
 {% endapi-method-parameter %}
-{% api-method-parameter name="system" type="String" required=true %}
-
-{% endapi-method-parameter %}
 {% api-method-parameter name="id" type="String" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="system" type="String" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -847,6 +849,43 @@ It delegates a patient to a healthcare party (By current healthcare party). A mo
 {% endapi-method-path-parameters %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="body" type="List" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+OK
+{% endapi-method-response-example-description %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="post" host="https://demo.icure.cloud" path="/rest/v2/patient/register/forHcp/{hcPartyId}/inGroup/{groupId}" %}
+{% api-method-summary %}
+Register a patient
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Register a new patient into the system
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="hcPartyId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% api-method-parameter name="groupId" type="String" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="body" type="Patient" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

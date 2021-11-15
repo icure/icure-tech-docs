@@ -7,7 +7,7 @@ One or several periods of care by an hcp for this patient
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| `type ` | [String](String) | Type of care/relationship. Values: doctor, referral, medicalhouse, retirementhome, hospital, other, referringphysician, referralHospital |
+| `type ` | [String](String) | Type of care/relationship. Values: doctor, referral, medicalhouse, retirementhome, hospital, other, referringphysician, managingOrganization |
 | `healthcarePartyId ` | [String](String) | UUID of the hcp.  |
 | `sendFormats * ` | [Map](String) | Preferred format of exchange for diverse means of communication  |
 | `referralPeriods * ` | [List](ReferralPeriod) | Time periods  |
