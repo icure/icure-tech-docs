@@ -60,15 +60,21 @@ In the above example, do not forget to :
 - Use your own login - password; 
 - Use your private encryption key;
 
+
 ### Supported FHIR APIs
 Based on the [FHIR Specification](https://www.hl7.org/fhir/http.html), iCure is currently supporting the following FHIR APIs :
 - [Create a patient](#create-a-patient)
 - [Read a patient](#read-a-patient)
 - [Delete a patient](#delete-a-patient)
-  
+- [Search patients](#search-patients)
+
 
 - [Create an observation](#create-an-observation)
 - [Read an observation](#read-an-observation)
+- [Search observations](#search-observations)
+
+
+- [Batch transaction resource creation](#batch-transaction-resource-creation)
 
 
 #### FHIR Resource Id 
@@ -177,6 +183,46 @@ await cryptoApi.checkPrivateKeyValidity(loggedHcp)
 {% endtabs %}
 
 
+#### Search patients
+Search patients based on [FHIR Specification](https://www.hl7.org/fhir/search.html).
+For now, iCure permits you to search patients by :
+- _id;
+- gender;
+- name;
+- _has:Observation:_tag;
+- _has:Observation:code;
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Search FHIR patients" %}
+```javascript
+import {
+    Api,
+    Filter,
+    FilterChainPatient,
+    Patient,
+    PatientByHcPartyNameContainsFuzzyFilter,
+    b64_2ua
+} from '@icure/api'
+import {crypto} from '@icure/api/node-compat.js'
+
+const host = 'https://kraken.icure.dev/rest/v1';
+const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'el-smith', 'mypassword', crypto)
+
+const loggedUser = await userApi.getCurrentUser();
+const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
+
+await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
+    loggedUser.healthcarePartyId,
+    b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+)
+await cryptoApi.checkPrivateKeyValidity(loggedHcp)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
 #### Create an observation
 Import a new observation in your iCure environment, based on [FHIR r4 Observation](https://www.hl7.org/fhir/observation.html).
 
@@ -219,6 +265,85 @@ Find an observation, using either its FHIR id or its iCure id.
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Read Observation" %}
+```javascript
+import {
+    Api,
+    Filter,
+    FilterChainPatient,
+    Patient,
+    PatientByHcPartyNameContainsFuzzyFilter,
+    b64_2ua
+} from '@icure/api'
+import {crypto} from '@icure/api/node-compat.js'
+
+const host = 'https://kraken.icure.dev/rest/v1';
+const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'el-smith', 'mypassword', crypto)
+
+const loggedUser = await userApi.getCurrentUser();
+const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
+
+await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
+    loggedUser.healthcarePartyId,
+    b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+)
+await cryptoApi.checkPrivateKeyValidity(loggedHcp)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
+#### Search observations
+Search observations based on [FHIR Specification](https://www.hl7.org/fhir/search.html).
+For now, iCure permits you to search observations by :
+- _tag;
+- code;
+- _has:Patient:_id;
+- _has:Patient:gender;
+- _has:Patient:name;
+
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Search FHIR Observations" %}
+```javascript
+import {
+    Api,
+    Filter,
+    FilterChainPatient,
+    Patient,
+    PatientByHcPartyNameContainsFuzzyFilter,
+    b64_2ua
+} from '@icure/api'
+import {crypto} from '@icure/api/node-compat.js'
+
+const host = 'https://kraken.icure.dev/rest/v1';
+const { patientApi, userApi, healthcarePartyApi, cryptoApi } = Api(host, 'el-smith', 'mypassword', crypto)
+
+const loggedUser = await userApi.getCurrentUser();
+const loggedHcp = await healthcarePartyApi.getCurrentHealthcareParty()
+
+await cryptoApi.loadKeyPairsAsTextInBrowserLocalStorage(
+    loggedUser.healthcarePartyId,
+    b64_2ua("MIIEvAIBAD...9HOmEwWQ==")
+)
+await cryptoApi.checkPrivateKeyValidity(loggedHcp)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
+#### Batch transaction resource creation
+If you need to create several resources, you can use the batch transaction resource creation and provide them
+in a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html).
+From this bundle, iCure will create in that order :
+- All patients entries;
+- All observations entries;
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Bundle FHIR Resource transaction creation" %}
 ```javascript
 import {
     Api,
