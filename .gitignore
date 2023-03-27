@@ -2,3 +2,5 @@
 /.utils/swagger/api/
 /.utils/swagger/model/
 /.utils/.idea/.utils.iml
+/.utils/node_modules
+/.utils/yarn-error.log

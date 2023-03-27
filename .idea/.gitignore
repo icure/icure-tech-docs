@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+/modules.xml
+/misc.xml
+/inspectionProfiles/Project_Default.xml
+/vcs.xml
+/icure-tech-docs.iml
