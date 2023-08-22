@@ -9,6 +9,7 @@ Data Models (such as FHIR, Open EHR, ...).
 
 Thanks to this high-level model, iCure will then let you easily manage all your data in a protected way, through a series of APIs.
 
+
 Following your needs, iCure can either be used in the Cloud or installed locally in a bare metal server or in a personal computer.
 
 iCure is:&#x20;
